@@ -5,7 +5,8 @@ import Search from '../Filters/Search'
 class CalendarContainer extends Component {
 
     state = {
-        date: new Date()
+        date: new Date(), 
+        search: ""
     }
 
     handleDate = (e: any) => {
@@ -14,12 +15,19 @@ class CalendarContainer extends Component {
         })
     }
 
+    handleSearch = (e: any) => {
+        this.setState({
+            search: e.target.value
+        })
+    }
+
     render() {
         return(
             <div>
                 <h3>Calendar Container</h3>
                 <p>Date selected: {this.state.date.toDateString()}</p>
-                <Search handleDate={this.handleDate}/>
+                <p>Search term: {this.state.search}</p>
+                <Search handleDate={this.handleDate} handleSearch={this.handleSearch} />
             </div>
         )
     }

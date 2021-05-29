@@ -2,7 +2,10 @@
 const Search = (props: any) => {
 
     return(
-        <input type='date' onChange={props.handleDate}/>
+        <div>
+            <input type='text' onChange={props.handleSearch}/>
+            <input type='date' onChange={props.handleDate}/>
+        </div>
     )
 
 }
