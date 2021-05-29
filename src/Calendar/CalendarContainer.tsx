@@ -7,7 +7,12 @@ class CalendarContainer extends Component {
 
     state = {
         date: new Date(), 
-        search: ""
+        search: "", 
+        events: [
+            {title: "title1", desc: "desc1"},
+            {title: "title2",desc: "desc2"},
+            {title: "title3",desc: "desc3"}
+        ]
     }
 
     handleDate = (e: any) => {
@@ -29,7 +34,7 @@ class CalendarContainer extends Component {
                 <p>Date selected: {this.state.date.toDateString()}</p>
                 <p>Search term: {this.state.search}</p>
                 <Search handleDate={this.handleDate} handleSearch={this.handleSearch} />
-                <EventsTable />
+                <EventsTable events={this.state.events}/>
             </div>
         )
     }

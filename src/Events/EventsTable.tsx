@@ -1,11 +1,10 @@
 
 const EventsTable = (props: any) => {
 
+    
     return(
         <div>
-            <h5>Event</h5>
-            <h5>Event</h5>
-            <h5>Event</h5>
+            {props.events.map((e: any) => <h1>{e.title}</h1>)}
         </div>
     )
 
