@@ -9,9 +9,9 @@ class CalendarContainer extends Component {
         date: new Date(), 
         search: "", 
         events: [
-            {title: "title1", desc: "desc1"},
-            {title: "title2",desc: "desc2"},
-            {title: "title3",desc: "desc3"}
+            {id: "1", title: "title1", desc: "desc1"},
+            {id: "2", title: "title2",desc: "desc2"},
+            {id: "3", title: "title3",desc: "desc3"}
         ]
     }
 
