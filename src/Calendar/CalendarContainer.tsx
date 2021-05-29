@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Search from '../Filters/Search'
+import EventsTable from '../Events/EventsTable'
 
 
 class CalendarContainer extends Component {
@@ -28,6 +29,7 @@ class CalendarContainer extends Component {
                 <p>Date selected: {this.state.date.toDateString()}</p>
                 <p>Search term: {this.state.search}</p>
                 <Search handleDate={this.handleDate} handleSearch={this.handleSearch} />
+                <EventsTable />
             </div>
         )
     }
