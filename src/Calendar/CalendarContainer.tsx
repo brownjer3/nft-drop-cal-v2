@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import Search from '../Filters/Search'
 
 
 class CalendarContainer extends Component {
@@ -8,19 +9,17 @@ class CalendarContainer extends Component {
     }
 
     handleDate = (e: any) => {
-        let date = new Date(e.target.value)
         this.setState({
-            date: new Date(date)
+            date: new Date(e.target.value)
         })
     }
-
 
     render() {
         return(
             <div>
                 <h3>Calendar Container</h3>
                 <p>Date selected: {this.state.date.toDateString()}</p>
-                <input type='date' onChange={this.handleDate}/>
+                <Search handleDate={this.handleDate}/>
             </div>
         )
     }
