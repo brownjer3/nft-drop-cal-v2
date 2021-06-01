@@ -15,9 +15,17 @@ class CalendarContainer extends Component {
         ]
     }
 
-    handleDate = (e: any) => {
+    localizeDate = (date: Date) => {
+        const timezoneOffset = date.getTimezoneOffset() * 60000
+        const local = date.getTime() + timezoneOffset
+        return new Date(local)
+    }
+
+    handleDateFilter = (e: any) => {
+        const dateInput = new Date(e.target.value)
+        const localDate = this.localizeDate(dateInput)
         this.setState({
-            date: new Date(e.target.value)
+            date: localDate
         })
     }
 
@@ -33,7 +41,7 @@ class CalendarContainer extends Component {
                 <h3>Calendar Container</h3>
                 <p>Date selected: {this.state.date.toDateString()}</p>
                 <p>Search term: {this.state.search}</p>
-                <Search handleDate={this.handleDate} handleSearch={this.handleSearch} />
+                <Search handleDateFilter={this.handleDateFilter} handleSearch={this.handleSearch} />
                 <EventsTable events={this.state.events}/>
             </div>
         )
